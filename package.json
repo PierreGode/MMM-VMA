@@ -1,0 +1,23 @@
+{
+  "name": "mmm-vma",
+  "version": "1.0.0",
+  "description": "MagicMirror² module that surfaces Viktigt Meddelande till Allmänheten (VMA) alerts for Sweden.",
+  "main": "MMM-VMA.js",
+  "scripts": {
+    "test": "node scripts/test-endpoints.js"
+  },
+  "keywords": [
+    "magicmirror",
+    "module",
+    "sweden",
+    "vma",
+    "alerts"
+  ],
+  "author": "MagicMirror² Community",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "https-proxy-agent": "^5.0.1",
+    "node-fetch": "^2.6.12"
+  }
+}
