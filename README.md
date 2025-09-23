@@ -1,6 +1,6 @@
 # MMM-VMA
 
-MMM-VMA is a production ready [MagicMirror²](https://magicmirror.builders/) module that shows the latest
+MMM-VMA [MagicMirror²](https://magicmirror.builders/) module that shows the latest
 **Viktigt Meddelande till Allmänheten (VMA)** alerts published by
 [Krisinformation.se](https://www.krisinformation.se/). The module consumes the official V3 API and can
 optionally surface test alerts so that you are prepared for Sweden's recurring public warning tests.
