@@ -23,7 +23,7 @@ optionally surface test alerts so that you are prepared for Sweden's recurring p
 2. Clone this repository:
 
    ```bash
-   git clone https://github.com/your-user/MMM-VMA.git
+   git clone https://github.com/PierreGode/MMM-VMA.git
    ```
 
 3. Install the Node.js dependencies inside the module folder:
