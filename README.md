@@ -5,13 +5,6 @@ MMM-VMA is a production ready [MagicMirror²](https://magicmirror.builders/) mod
 [Krisinformation.se](https://www.krisinformation.se/). The module consumes the official V3 API and can
 optionally surface test alerts so that you are prepared for Sweden's recurring public warning tests.
 
-## Features
-
-- ✅ Polls the official Krisinformation V3 endpoints for active and test VMA alerts.
-- ✅ County aware filtering so you only see messages that matter to your location.
-- ✅ Localised timestamps with optional relative mode (`just now`, `3 hours ago`, …).
-- ✅ Graceful error handling with automatic retries and helpful UI states.
-- ✅ Lightweight styling that matches the MagicMirror aesthetic.
 
 ## Requirements
 
@@ -78,38 +71,16 @@ optionally surface test alerts so that you are prepared for Sweden's recurring p
 | `loadingMessage`    | `object`  | `{ sv: "Hämtar meddelanden…", en: "Loading alerts…" }` | Customise the loading indicator. |
 | `errorMessage`      | `object`  | `{ sv: "Kunde inte hämta VMA", en: "Failed to load VMA alerts" }` | Customise the error headline. |
 
-## API Endpoints Investigated
 
-The module interacts exclusively with Krisinformation's V3 endpoints. During development we probed the
-following resources to understand payloads, rate limits and filtering behaviour:
+## Features
 
-| Endpoint | Purpose | Notes |
-|----------|---------|-------|
-| `GET /v3/vmas` | Active VMA alerts. | Supports `language`, `counties` and `allCounties`. Usually empty unless a warning is in effect. |
-| `GET /v3/testvmas` | Test alerts. | Great for validating the UI when no live alerts exist. Mirrors the schema from `/v3/vmas`. |
-| `GET /v3/pushentities?includeTestVma=true` | Combined feed used for push notifications. | Useful as a fallback to verify that the upstream service is healthy. |
+- ✅ Polls the official Krisinformation V3 endpoints for active and test VMA alerts.
+- ✅ County aware filtering so you only see messages that matter to your location.
+- ✅ Localised timestamps with optional relative mode (`just now`, `3 hours ago`, …).
+- ✅ Graceful error handling with automatic retries and helpful UI states.
+- ✅ Lightweight styling that matches the MagicMirror aesthetic
 
-Run `npm test` (see below) to hit the endpoints and print a short health summary.
 
-## Styles and Theming
-
-The bundled stylesheet (`MMM-VMA.css`) sticks to MagicMirror's visual language. Override the provided
-CSS classes to tweak colours, typography or layout. Test alerts receive the `vma-entry-test` class and a
-subtle badge so that they are easy to spot without stealing focus.
-
-## Development & Testing
-
-The repository includes a lightweight endpoint probe that exercises the production API:
-
-```bash
-npm test
-```
-
-The script performs authenticated GET requests with a descriptive user agent, validates the HTTP status and
-prints payload statistics. A non-zero exit code indicates a connectivity or upstream issue.
-
-When contributing code, please run the test command before committing to make sure the module can reach
-Krisinformation's API.
 
 ## Troubleshooting
 
